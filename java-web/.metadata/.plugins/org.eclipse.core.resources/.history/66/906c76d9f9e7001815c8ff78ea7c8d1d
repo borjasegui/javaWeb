@@ -1,0 +1,42 @@
+package com.borja.controllers;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/Login")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	   request.getRequestDispatcher("/login.jsp").forward(request, response);	
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 String emailrecib =request.getParameter("email");
+		 String passrecib =request.getParameter("password");
+	
+		System.out.println("ESTOY en el post");
+		System.out.println("este es tu" + emailrecib);
+		System.out.println("este es tu" + passrecib);
+		
+		//decidir si existe usuario cn ese email y pass.. entrar en listausuarios
+		//si no ...volver a mostrar formulario
+		
+		
+		if(emailrecib.equals("r@r.es") && passrecib.equals("xxx")) {
+			//llevarlo
+		}
+		else {
+			request.setAttribute("errormensaje", "contraseña y email invalidos");
+			doGet(request,response);
+		}
+	}
+
+}

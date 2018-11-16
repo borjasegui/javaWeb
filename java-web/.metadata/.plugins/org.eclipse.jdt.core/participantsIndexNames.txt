@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\Borja\workspace\java-web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1887873950.index
+\ProyectoMVC2\src
+C:\Borja\workspace\java-web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\436260154.index
+\Myspotify1\src
+C:\Borja\workspace\java-web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2517669200.index
+\HelloMVC\src
+C:\Borja\workspace\java-web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\972980115.index
+\HelloMVC\src

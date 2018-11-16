@@ -1,0 +1,23 @@
+package com.spotify.models;
+
+import java.util.ArrayList;
+
+import com.borja.models.Usuario;
+
+public class BBDDCanciones {
+
+	public ArrayList<Cancion> canciones = new ArrayList<cancion>();
+
+	public BBDDCanciones() {
+		this.fillcanciones();
+	}
+
+	private boolean fillcanciones() {
+
+		canciones.add(new Usuario(1, "toxic", "Britney Spears", null));
+		canciones.add(new Usuario(2, "opps i did it again", "Britney Spears", null));
+		canciones.add(new Usuario(3, "baby one more time", "Britney Spears", null));
+
+		return true;
+	}
+}

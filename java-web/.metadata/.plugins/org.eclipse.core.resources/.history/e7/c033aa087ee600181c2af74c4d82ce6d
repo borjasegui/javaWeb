@@ -1,0 +1,5 @@
+package com.borja.models;
+
+public class Habitacion {
+
+}

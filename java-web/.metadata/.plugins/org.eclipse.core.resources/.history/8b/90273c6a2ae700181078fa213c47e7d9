@@ -1,0 +1,38 @@
+package com.borja.database;
+
+import java.util.ArrayList;
+
+import com.borja.models.Habitacion;
+import com.borja.models.Usuario;
+
+public class BBDD {
+	public ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+	
+	public ArrayList<Habitacion> Habitaciones = new ArrayList<Habitacion>();
+	
+	public BBDD() {
+		this.fillUsuarios();
+		this.fillHabitaciones();
+		this.relacionaruserhab();
+	}
+	private boolean fillUsuarios() {
+		
+		usuarios.add(new usuarios(1, "luisa", null));
+		usuarios.add(new usuarios(2, "petra", null));
+		usuarios.add(new usuarios(3, "pedro", null));
+		return true;
+	}
+	private boolean fillHabitaciones() {
+		habitaciones.add(new Habitaciones(3456,"cantarranas n3", 256));
+		habitaciones.add(new Habitaciones(43432,"calle real n45", 256));
+		habitaciones.add(new Habitaciones(1234,"cañada real n 9", 256));
+		
+		return true;
+	}
+	 private boolean relacionaruserhab() {
+		 usuarios.get(0).setHabitacion(habitacion.get(2));
+		 usuarios.get(1).setHabitacion(habitacion.get(1));
+		 usuarios.get(2).setHabitacion(habitacion.get(0));
+	 }
+
+}
