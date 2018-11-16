@@ -19,9 +19,9 @@ public class NuevoUsuarioServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		ArrayList<Habitacion> habitaciones = BBDD.getInstance().Habitaciones;
-		
+
 		request.setAttribute("lasHabitaciones", habitaciones);
 		request.getRequestDispatcher("/nuevousuario.jsp").forward(request, response);
 	}
@@ -34,16 +34,26 @@ public class NuevoUsuarioServlet extends HttpServlet {
 		String passrecib = request.getParameter("password");
 		String confirmrecib = request.getParameter("confirmacion");
 		String habitacionrec = request.getParameter("habitacion");
-		
-		System.out.println("habitacion: " +habitacionrec);
 
-		Usuario nuevoUser = new Usuario(0, nombrerecib, passrecib, emailrecib, null);
+		int habitacionrecId = 0;
+
+		try {
+			habitacionrecId = Integer.parseInt(habitacionrec);
+		} catch (Exception e) {
+			System.out.println("Execepcion!!!!: " + e.getMessage());
+
+		}
+
+		System.out.println("habitacion: " + habitacionrec);
+
+		Usuario nuevoUser = new Usuario(0, nombrerecib, passrecib, emailrecib,
+				BBDD.getInstance().getHabitacionByHid(habitacionrecId));
 
 		if (nuevoUser.esValido(confirmrecib)) {
-			
+
 			BBDD bbdd = BBDD.getInstance();
 			bbdd.insertarUsuario(nuevoUser);
-			response.sendRedirect("listaUsuarios");
+			response.sendRedirect("             listaUsuarios");
 
 		} else {
 			request.setAttribute("mensajeerror", "datos incorrectos");

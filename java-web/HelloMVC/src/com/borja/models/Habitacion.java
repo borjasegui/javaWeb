@@ -35,5 +35,17 @@ public class Habitacion {
 		this.metros = metros;
 	}
 	
+	public boolean esValido() {
+		boolean esValid=true;
 
+		if(this.calle==null || this.calle.equals("") ) esValid=false;
+		
+		if(!this.calle.matches("(.*)?[0-9](.*)?")) esValid=false;
+		
+		if(this.metros<=0) esValid=false;
+		
+		
+		
+		return esValid;
+	}
 }

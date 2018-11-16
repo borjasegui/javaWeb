@@ -10,15 +10,19 @@
 <body>
 	<h1>Login</h1>
 	<div class="error">${errormensaje}</div>
-	
+
 	<form action="" method="POST">
-	<div>
-	<input type="text" placeholder="email" name="nombre" id="email" required/>
-	</div>
-	<div>
-	<input type="password" placeholder="password" name="password" id="password" required/>
-	</div>
-	<div><button>Entrar</button></div>
+		<div>
+			<input type="text" placeholder="email" name="nombre" id="email"
+				required />
+		</div>
+		<div>
+			<input type="password" placeholder="password" name="password"
+				id="password" required />
+		</div>
+		<div>
+			<button>Entrar</button>
+		</div>
 	</form>
 
 </body>

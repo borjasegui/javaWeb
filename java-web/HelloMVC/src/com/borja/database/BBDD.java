@@ -121,4 +121,17 @@ public class BBDD {
 		return nuevoId;
 
 	}
+
+	public int insertarHabitacion(Habitacion nuevaHabitacion) {
+		int nuevoHid = 0;
+
+		nuevoHid = this.Habitaciones.size() + 1;
+
+		nuevaHabitacion.setHid(nuevoHid);
+
+		this.Habitaciones.add(nuevaHabitacion);
+
+		return nuevoHid;
+		
+	}
 }
